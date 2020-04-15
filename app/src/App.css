@@ -1,0 +1,85 @@
+body {
+	background-image: linear-gradient(to right, #996fb4, #8c6cc4, #cca4ec);
+}
+
+h1 {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	padding: 5px;
+	font-size: 12px;
+}
+
+li:first-child {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.wrapper {
+	margin: 100px auto;
+	max-width: 290px;
+	background-color: #fafafa;
+	box-shadow: 0 15px 20px -11px #683444;
+}
+
+.wrapper-button {
+	color: #683444;
+	display: flex;
+}
+
+.wrapper-button button {
+	display: inline-block;
+	margin: 40px auto;
+	width: 200px;
+	padding: 15px;
+	border-radius: 7px;
+	border: none;
+	background: #8c6cc4;
+	color: #fff;
+	padding: 12px;
+	box-shadow: 0 10px 20px -11px #683444;
+	cursor: pointer;
+	transform: scale(1.05);
+	transition: transform 1s;
+}
+.wrapper-button button:hover {
+	transform: scale(1);
+}
+
+.card {
+	padding: 10px;
+	position: relative;
+	animation: appear 1s ease;
+}
+
+.card-img-wrapper {
+	text-align: center;
+	margin: 50px;
+}
+
+.card-img-wrapper img {
+	border-radius: 50%;
+	width: 120px;
+}
+
+.card-data-wrapper {
+	text-align: center;
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+		top: 35px;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+	}
+}
