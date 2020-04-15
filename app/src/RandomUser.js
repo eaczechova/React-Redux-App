@@ -1,38 +1,51 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from './actions';
+import {
+	Wrapper,
+	LoadingWrapper,
+	Card,
+	ImageWrapper,
+	CardImage,
+	CardDataWrapper,
+	CardDataItem,
+	ButtonWrapper,
+	Button,
+} from './styles';
 
 const RandomUser = (props) => {
 	return (
-		<div className="wrapper">
+		<Wrapper>
 			{props.isLoading ? (
-				<div>Loading</div>
+				<LoadingWrapper className="progress-bar">
+					<span></span>
+				</LoadingWrapper>
 			) : (
 				<>
 					{props.error && <div>{props.error}</div>}
 					<main>
 						{props.user.map((data) => {
 							return (
-								<div key={data.id.value} className="card">
-									<div className="card-img-wrapper">
-										<img src={data.picture.large} alt={data.gender} />
-									</div>
-									<ul className="card-data-wrapper">
-										<li>{`${data.name.first} ${data.name.last}`}</li>
-										<li>{data.email}</li>
-										<li>{`${data.location.city}, ${data.location.country}`}</li>
-										<li>{data.phone}</li>
-									</ul>
-								</div>
+								<Card key={data.id.value}>
+									<ImageWrapper>
+										<CardImage src={data.picture.large} alt={data.gender} />
+									</ImageWrapper>
+									<CardDataWrapper>
+										<CardDataItem>{`${data.name.first} ${data.name.last}`}</CardDataItem>
+										<CardDataItem>{data.email}</CardDataItem>
+										<CardDataItem>{`${data.location.city}, ${data.location.country}`}</CardDataItem>
+										<CardDataItem>{data.phone}</CardDataItem>
+									</CardDataWrapper>
+								</Card>
 							);
 						})}
-						<div className="wrapper-button">
-							<button onClick={() => props.fetchData()}>Get User</button>
-						</div>
+						<ButtonWrapper>
+							<Button onClick={() => props.fetchData()}>Get User</Button>
+						</ButtonWrapper>
 					</main>
 				</>
 			)}
-		</div>
+		</Wrapper>
 	);
 };
 
