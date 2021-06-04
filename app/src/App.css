@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-image: linear-gradient(to right, #996fb4, #8c6cc4, #cca4ec);
+}
+
+.progress-bar {
+	background: #683444;
+	height: 1.5rem;
+	animation: load 0.7s linear;
+	animation-fill-mode: forwards;
+	width: 20%;
+}
+
+@keyframes load {
+	from {
+		width: 20%;
+	}
+	to {
+		width: 100%;
+	}
+}
